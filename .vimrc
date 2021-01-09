@@ -1,45 +1,56 @@
-" ここから標準の設定
+" カラースキーム
 syntax on
 set t_Co=256
 colorscheme molokai
 
+" 行番号
 set number
-set cursorline "カーソル
-set laststatus=2 "ステータスバー
-set cmdheight=2 "メッセージ2行
-set showmatch " 括弧表示
-set whichwrap=b,s,h,l,<,>,[,] "カーソル折り返す
-set scrolloff=8 "8行上にスペース
-set nobackup " バックアップファイルを作らない
-set noswapfile " スワップファイルを作らない
 
-" タブをスペースに
-set expandtab
-set shiftwidth=2
-set tabstop=2
+"カーソル
+set cursorline
 
-set autoindent
-" set noexpandtab
-" set softtabstop=0
+"ステータスバー
+set laststatus=2
 
-" ESC -> Ctrl+j
+"メッセージを2行で表示する
+set cmdheight=2
+
+" 対応する括弧表示
+set showmatch
+
+"カーソル折り返す
+set whichwrap=b,s,h,l,<,>,[,]
+
+"8行上にスペース
+set scrolloff=8
+
+" バックアップファイルを作らない
+set nobackup 
+
+" スワップファイルを作らない
+set noswapfile 
+
+" ESC の代わりに Ctrl+j を使用する
 imap <c-j> <esc>
 vmap <c-j> <esc>
 
-" Ctrl-e で実行
-autocmd BufRead,BufNewFile *.py nnoremap <C-e> :!python %
-autocmd BufRead,BufNewFile *.rb nnoremap <C-e> :!ruby %
-autocmd BufRead,BufNewFile *.tex nnoremap <C-e> :!./build.sh 
+" オートインデント
+set autoindent
+
+" タブをスペースに変更する
+set expandtab
+
+" タブを移動するときのスペース数
+set shiftwidth=2
+
+" タブを2文字分として表示
+set tabstop=2
 
 " ファイルごとのタブ設定
 augroup fileTypeIndent
 	autocmd!
+	" ruby
 	autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+	" python
 	autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
-
-
-" Clipboard
-set clipboard+=unnamed 
-set clipboard+=autoselect
-

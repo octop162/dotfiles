@@ -1,5 +1,3 @@
-# 
-source ~/.zshlocal
 
 case ${OSTYPE} in
     darwin*)
@@ -10,17 +8,13 @@ case ${OSTYPE} in
         ;;
 esac  
 
-alias p="python "
 alias py="python "
-alias ru="ruby "
-alias rb="ruby "
-alias n="node "
-alias no="node "
 
 alias l="ls"
 alias ls="ls --color"
 alias ll="ls -la"
 alias la="ls -a"
+
 # ------------------------------
 # General Settings
 # ------------------------------
@@ -53,6 +47,7 @@ setopt extended_history   # ヒストリに実行時間も保存する
 setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加しない
 setopt share_history      # 他のシェルのヒストリをリアルタイムで共有する
 setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに保存する
+
 # すべてのヒストリを表示する
 function history-all { history -E 1 }
 # マッチしたコマンドのヒストリを表示できるようにする
@@ -104,13 +99,11 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ;
 
 # ------------------------------
-# Other Settings
+# その他
 # ------------------------------
-#時刻を表示させる
+#履歴に時刻を表示させる
 alias history='history -E'
-# cdコマンド実行後、lsを実行する
-function cd() {
-  builtin cd $@ && ls --color;
-}
 
 
+# 個別設定
+source ~/.zshlocal
