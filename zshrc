@@ -93,7 +93,15 @@ SPROMPT=$tmp_sprompt
   PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
 ;
 
+
+# ------------------------------
+# パス
+# ------------------------------
+PATH=$PATH:$HOME/bin
+
+
 # ------------------------------
 # その他
 # ------------------------------
 source ~/.zshlocal
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
