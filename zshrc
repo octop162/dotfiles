@@ -106,6 +106,28 @@ PATH=$PATH:$HOME/bin
 source ~/.zshlocal
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# docker
+alias dc="docker compose"
+alias dcb="docker compose build"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+function dce () {
+    docker compose exec $1 bash
+}
+
+# kubernetes
+alias k="kubectl"
+
+# nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# go 
+export PATH=$PATH:/usr/local/go/bin
+
