@@ -1,29 +1,27 @@
-# dotfiles
+# Setup
 
-## setup
-
-Install Apt
+## install apt
 
 ```
-sudo apt install vim git zsh
+sudo apt install vim git zsh tmux
 ```
 
-Homebrew
+## Homebrew
 
-- `https://brew.sh/`
+`https://brew.sh/`
 
-pyenv, nvm
+## pyenv, nvm
 
 ```
 brew install pyenv
 brew install nvm
 ```
 
-go
+## go
 
-- https://go.dev/doc/install
+https://go.dev/doc/install
 
-## setup dotfiles
+# Setup dotfiles
 
 ```bash
 cd ~
