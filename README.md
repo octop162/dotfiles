@@ -8,7 +8,7 @@ sudo apt install vim git zsh tmux
 
 ## Homebrew
 
-`https://brew.sh/`
+https://brew.sh/
 
 ## pyenv, nvm
 
