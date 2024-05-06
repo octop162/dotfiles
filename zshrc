@@ -13,10 +13,26 @@ esac
 # ------------------------------
 # Alias
 # ------------------------------
+
+# ls
 alias l="ls"
 alias ls="ls --color"
 alias ll="ls -la"
 alias la="ls -a"
+
+# docker
+alias dc="docker compose"
+alias dcb="docker compose build"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+function dce () {
+    docker compose exec $1 bash
+}
+
+# kubernetes
+alias k="kubectl"
+
+# other
 alias history='history -E'
 
 # ------------------------------
@@ -93,34 +109,22 @@ SPROMPT=$tmp_sprompt
   PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
 ;
 
-
 # ------------------------------
-# パス
+# binパス
 # ------------------------------
 PATH=$PATH:$HOME/bin
 
+# ------------------------------
+# アプリケーション
+# ------------------------------
 
-# ------------------------------
-# その他
-# ------------------------------
+# Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-# docker
-alias dc="docker compose"
-alias dcb="docker compose build"
-alias dcu="docker compose up -d"
-alias dcd="docker compose down"
-function dce () {
-    docker compose exec $1 bash
-}
-
-# kubernetes
-alias k="kubectl"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
