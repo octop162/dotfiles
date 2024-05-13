@@ -1,7 +1,11 @@
 " カラースキーム
 syntax on
 set t_Co=256
-colorscheme delek
+colorscheme darkblue
+
+" エンコード設定
+set encoding=utf-8
+set fileencodings=utf-8,sjis
 
 " 行番号
 set number
